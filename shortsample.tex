@@ -1,0 +1,70 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\geometry{top=2.4cm, bottom=2.4cm, left=2.4cm, right=2.4cm}
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1}
+
+\begin{document}
+
+\begin{center}
+\textbf{\uppercase{Como elegir la arquitectura de la aplicacion segun su tipo}}\\[10pt]
+\textit{D. F. Velásquez Pichilla}\\
+\textit{7690-16-3882 Universidad Mariano Gálvez}\\
+\textit{Seminario de Tecnología de Información}\\
+\textit{dvelasquezp4@miumg.edu.gt}
+\end{center}
+
+\textbf{Resumen}\\
+La arquitectura de software es el plano estructural sobre el que se construye cualquier aplicación, y su correcta elección incide directamente en el rendimiento, la escalabilidad y la facilidad de mantenimiento del sistema. Este artículo expone criterios y buenas prácticas para seleccionar la arquitectura más adecuada según el tipo de aplicación, considerando factores como el volumen de usuarios, la complejidad del dominio, el tiempo de desarrollo, la disponibilidad de recursos y la experiencia técnica del equipo. Se analizan las características, ventajas y limitaciones de las arquitecturas monolítica, en capas, orientada a servicios, basada en microservicios, sin servidor y orientada a eventos, con ejemplos de contextos reales en los que resultan convenientes. Finalmente, se ofrecen recomendaciones para validar la decisión arquitectónica mediante prototipos y métricas no funcionales antes de implementarla a gran escala.\\[8pt]
+
+\textbf{Palabras claves:} arquitectura de software, escalabilidad, microservicios, patrones de diseño, mantenibilidad
+
+\textbf{Desarrollo del tema}\\
+Seleccionar la arquitectura correcta implica comprender no solo el funcionamiento interno del sistema, sino también su entorno operativo y los cambios que experimentará en el tiempo. La decisión debe ser estratégica, considerando tanto las necesidades presentes como la capacidad de evolución futura.
+
+\textit{Factores esenciales para la elección:}
+\begin{itemize}
+    \item \textbf{Escalabilidad:} Capacidad para incrementar recursos sin degradar el rendimiento.
+    \item \textbf{Mantenibilidad:} Facilidad de adaptación ante nuevas funcionalidades o cambios en los requisitos.
+    \item \textbf{Tiempo de desarrollo:} Arquitecturas más complejas requieren mayor planificación y pruebas.
+    \item \textbf{Presupuesto:} El costo de infraestructura y mantenimiento varía según el modelo elegido.
+    \item \textbf{Experiencia técnica:} La arquitectura debe ser viable para las competencias del equipo.
+\end{itemize}
+
+\textit{Principales tipos de arquitecturas y su contexto de uso:}
+\begin{enumerate}
+    \item \textbf{Monolítica:} Todo el sistema se ejecuta como una única unidad de despliegue. Es adecuada para aplicaciones pequeñas o medianas con requisitos estables y un equipo reducido.
+    \item \textbf{En capas:} Organiza la aplicación en niveles separados (presentación, lógica y datos), lo que mejora la organización y facilita la sustitución de componentes.
+    \item \textbf{Orientada a servicios (SOA):} Divide las funcionalidades en servicios independientes con contratos bien definidos, favoreciendo la reutilización en entornos corporativos.
+    \item \textbf{Microservicios:} Conjunto de servicios pequeños y autónomos, cada uno con su propia base de datos, escalables de forma independiente. Útiles en sistemas grandes y con equipos especializados.
+    \item \textbf{Sin servidor (Serverless):} Funciones alojadas en la nube que se ejecutan bajo demanda, eliminando la gestión de servidores. Ideal para cargas variables o eventos esporádicos.
+    \item \textbf{Basada en eventos:} Arquitectura reactiva que responde a sucesos en tiempo real, apropiada para sistemas de monitoreo, IoT o procesamiento en streaming.
+\end{enumerate}
+
+\textit{Ejemplo de selección:}  
+Una aplicación interna para una pequeña empresa puede beneficiarse de un modelo monolítico, evitando sobrecostos. En cambio, una plataforma de comercio electrónico internacional puede requerir microservicios combinados con un enfoque basado en eventos para soportar picos de demanda y garantizar disponibilidad continua.
+
+La decisión debe validarse mediante \textbf{prototipos} que simulen la carga real, midan la latencia y evalúen el costo total de propiedad (TCO). También es fundamental anticipar la integración de herramientas de monitoreo y registro desde el inicio.
+
+\textbf{Observaciones y comentarios}\\
+En muchos casos, las fallas no provienen de errores en el código, sino de una elección arquitectónica que no correspondía al tipo de aplicación ni a las capacidades del equipo. Adoptar un enfoque iterativo, comenzando con soluciones simples y evolucionando hacia modelos más complejos, puede evitar sobrecostos y tiempos muertos.
+
+\textbf{Conclusiones}
+\begin{enumerate}
+    \item La arquitectura debe responder al tipo de aplicación y a sus requisitos no funcionales.
+    \item Factores como escalabilidad, costo y experiencia del equipo son determinantes.
+    \item No existe una arquitectura perfecta; el contexto define la mejor elección.
+    \item La validación temprana reduce el riesgo de rediseños costosos.
+\end{enumerate}
+
+\textbf{Bibliografía}
+\begin{itemize}
+    \item Bass, L., Clements, P., \& Kazman, R. (2021). \textit{Software Architecture in Practice} (4th ed.). Addison-Wesley.
+    \item Richards, M., \& Ford, N. (2020). \textit{Fundamentals of Software Architecture}. O’Reilly Media.
+    \item Newman, S. (2021). \textit{Building Microservices} (2nd ed.). O’Reilly Media.
+    \item Fowler, M. (2015). \textit{Microservices: a definition of this new architectural term}. martinfowler.com.
+\end{itemize}
+
+\end{document}
